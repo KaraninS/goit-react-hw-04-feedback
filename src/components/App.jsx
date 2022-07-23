@@ -26,14 +26,14 @@ export class App extends Component {
       return { [key]: prevState[key] + 1 };
     });
   };
-  feedbackTypes = () => Object.keys(this.state);
+  keys = Object.keys(this.state);
   render() {
     const { good, bad, neutral } = this.state;
     return (
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.feedbackTypes()}
+            options={this.keys}
             onLeaveFeedback={this.handleClick}
           />
         </Section>
