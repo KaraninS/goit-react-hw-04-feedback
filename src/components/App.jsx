@@ -42,7 +42,7 @@ export function App() {
     }
     return Math.floor((good * 100) / total);
   };
-
+  const countTotal = countTotalFeedback();
   return (
     <div>
       <Section title="Please leave feedback">
@@ -52,12 +52,12 @@ export function App() {
         />
       </Section>
       <Section title="Statistics">
-        {countTotalFeedback() > 0 ? (
+        {countTotal > 0 ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
-            total={countTotalFeedback()}
+            total={countTotal}
             positivePercentage={countPositiveFeedbackPercentage()}
           ></Statistics>
         ) : (
